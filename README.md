@@ -1,67 +1,114 @@
-# Evaluate A News Article with Natural Language Processing
+![image](https://github.com/user-attachments/assets/7fda6ecc-781b-444a-a607-2446f7e80698)
 
-This is the 4th project in the [Udacity](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011) Front End Web Developer Nanodegree program.
 
-The goal of this project is to create a web tool that lets users analyze the sentiment of articles or blogs from other websites using Natural Language Processing (NLP). When a user submits an article URL, the web page shows sentiment analysis results from the [meaningcloud API](https://www.meaningcloud.com/products/sentiment-analysis) based on the article's content.
+# Evaluate a News Article with Natural Language Processing
 
-## Tools Used
-* HTML
-* CSS
-* JavaScript
-* Node.js
-* Express
-* Webpack
-* meaningcloud API
-* Jest
-* Workbox
+This project is a web tool that allows users to analyze articles or blogs from the internet using Natural Language Processing (NLP). With this tool, you can determine the tone (positive, negative, or neutral) and subjectivity (subjective or objective) of any text content, leveraging an external NLP API.
 
-## How to Install
-Make sure you have Node.js and npm installed. Check by running:
-```
-node -v
-npm -v
+## Project Overview
+
+The main motivation behind this project is to introduce you to a realistic front-end development workflow, using tools and technologies common in the industry. The project architecture leverages Node.js, Express, Webpack, and service workers, giving you hands-on experience with modern web development setups.
+
+Instead of implementing a full NLP system, this project interacts with a Udacity-hosted AWS NLP API, which processes the text and returns analysis results.
+
+## Features
+
+- Analyze any online article or blog for tone and subjectivity
+- Simple user interface for entering URLs or text
+- Offline functionality using a Service Worker
+- Separate development and production builds via Webpack
+
+## Technologies Used
+
+- **JavaScript** (ES6+)
+- **Node.js** & **Express** (backend server and routing)
+- **Webpack** (module bundler & build tools)
+- **SCSS** (styling)
+- **HTML**
+- **Service Worker** (offline support)
+- **Udacity NLP API** (external analysis)
+
+## Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Udacity-Front-End-Internship/Evaluate-a-News-Article-with-Natural-Language-Processing.git
+   cd Evaluate-a-News-Article-with-Natural-Language-Processing
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment Variables:**
+
+   Create a `.env` file in the root directory and add the following variables:
+   ```env
+   BASE_URL=your_base_url_here
+   PORT=your_port_number_here
+   API_URL=https://kooye7u703.execute-api.us-east-1.amazonaws.com/NLPAnalyzer
+   ```
+
+   - `BASE_URL` - The base URL for your app (e.g., http://localhost:8081).
+   - `PORT` - The port your server will run on (e.g., 8081).
+   - `API_URL` - The Udacity NLP API endpoint (default provided above).
+
+4. **Run the development server:**
+   ```bash
+   npm run build-dev
+   npm run start
+   ```
+
+5. **For production build:**
+   ```bash
+   npm run build-prod
+   npm run start
+   ```
+
+## Usage
+
+- Open the application in your browser.
+- Enter the URL of an article or paste the text you want to analyze.
+- Submit to receive an analysis of the tone and subjectivity.
+
+## API Reference
+
+Analysis is performed via the Udacity NLP API:
+
+**Endpoint:**  
+`https://kooye7u703.execute-api.us-east-1.amazonaws.com/NLPAnalyzer`
+
+**Request:** (POST)
+```json
+{
+  "text": "Your extracted text here"
+}
 ```
 
-1. Go to the project folder:
+**Response:**
+```json
+{
+  "tone": "positive | negative | neutral",
+  "subjectivity": "subjective | objective"
+}
 ```
-cd <project directory>
-```
-2. Clone the repository:
-```
-git clone <repo>
-```
-3. Install npm packages:
-```
-npm install
-```
-4. Install necessary loaders and plugins:
-```
-npm i -D @babel/core @babel/preset-env babel-loader
-npm i -D style-loader node-sass css-loader sass-loader
-npm i -D clean-webpack-plugin
-npm i -D html-webpack-plugin
-npm i -D mini-css-extract-plugin
-npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
-```
-5. Sign up for an API key at [meaningcloud.com](https://www.meaningcloud.com/developer/create-account)
 
-6. Set up environment variables with dotenv:
-    1. Install dotenv:
-    ```
-    npm install dotenv
-    ```
-    2. Create a `.env` file in the root of your project.
-    3. Add your API key to the `.env` file like this:
-    ```
-    BASE_URL==**************************
-    PORT==**************************
-    API_URL==**************************
-    ```
-7. Start the project:
+## Project Structure
 
-Command | Action
-:------------: | :-------------:
-`npm run build-prod` | Build the project
-`npm start` | Run the project
+- `/src` - Main application source code
+- `/dist` - Production build output
+- `/server` - Express server setup
+- `/webpack.config.js` - Webpack configuration
 
-8. Open your browser and go to http://localhost:8080/
+## Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+> **Tip:** For a deeper understanding of the project requirements and evaluation criteria, please refer to the Udacity project rubric before submitting your work.
