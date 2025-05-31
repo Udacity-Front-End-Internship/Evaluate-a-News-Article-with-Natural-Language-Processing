@@ -1,0 +1,29 @@
+#articleResult {
+    margin-top: 2.5rem;
+}
+
+#articleResult p {
+    margin-bottom: 1.5rem;
+}
+
+#articleResult table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+#articleResult th, #articleResult td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+#articleResult th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#articleError {
+    margin-top: 2.5rem;
+    color: red;
+}
