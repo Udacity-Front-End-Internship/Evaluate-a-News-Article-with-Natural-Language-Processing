@@ -110,5 +110,3 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 This project is licensed under the MIT License.
 
 ---
-
-> **Tip:** For a deeper understanding of the project requirements and evaluation criteria, please refer to the Udacity project rubric before submitting your work.
